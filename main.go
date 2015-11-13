@@ -4,6 +4,7 @@ import (
   "fmt"
   "log"
   "time"
+  //"strconv"
   "net/http"
   "encoding/json"
 )
@@ -44,7 +45,9 @@ type Detail struct {
 }
 
 var UserOPTIONS = MethodOPTIONS{ OPTIONS: EndPoint{ Description: "User page" } }
-// var UserGetParameters = []Param{ { Name: "Email" } }
+var UserGetParameters = []Param{ { Name: "Email", ParametersDetails: Detail{ Type: "string", Description: "Get user Email", Required: true } } }
+
+type DocMethod interface {}
 
 func main() {
 
@@ -64,6 +67,8 @@ func main() {
 func Hello(w http.ResponseWriter, r *http.Request) {
     //w.Header().Set("Allow","DELETE,GET,HEAD,OPTIONS,POST,PUT")
 	w.Header().Set("Allow","OPTIONS,GET")
+	UserDoc := []DocMethod{}
+	UserDoc = append(UserDoc, UserOPTIONS)
 }
 
 func Users(w http.ResponseWriter, r *http.Request) {
