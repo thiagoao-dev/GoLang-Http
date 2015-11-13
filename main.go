@@ -44,10 +44,10 @@ type Detail struct {
   Required    bool   `json:"required"`
 }
 
+type DocMethod interface {}
+
 var UserOPTIONS = MethodOPTIONS{ OPTIONS: EndPoint{ Description: "User page" } }
 var UserGetParameters = []Param{ { Name: "Email", ParametersDetails: Detail{ Type: "string", Description: "Get user Email", Required: true } } }
-
-type DocMethod interface {}
 
 func main() {
 
