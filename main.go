@@ -47,8 +47,11 @@ type Detail struct {
 var UserOPTIONS = MethodOPTIONS{ OPTIONS: EndPoint{ Description: "User page" } }
 var UserGetParameters = []Param{ { Name: "Email", ParametersDetails: Detail{ Type: "string", Description: "Get user Email", Required: true } } }
 
+<<<<<<< HEAD
 type DocMethod interface {}
 
+=======
+>>>>>>> 99feb311e32b03ba9f3ba705808b9f11b8f384d6
 func main() {
 
   http.HandleFunc("/api", Hello)
