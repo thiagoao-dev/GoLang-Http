@@ -4,6 +4,7 @@ import (
   "fmt"
   "log"
   "time"
+  //"strconv"
   "net/http"
   "encoding/json"
 )
@@ -62,11 +63,14 @@ func main() {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
+<<<<<<< HEAD
     //w.Header().Set("Allow","DELETE,GET,HEAD,OPTIONS,POST,PUT")
 	w.Header().Set("Allow","OPTIONS,GET")
 }
 
 func Users(w http.ResponseWriter, r *http.Request) {
+=======
+>>>>>>> 8cb179b3fd32b845cc7a8c2a0a128c015c98e7cf
   
   user := Person{ Name:"Jon Jones", Birth: time.Date(1987, time.July, 19, 0, 0, 0, 0, time.UTC), Email:"j.jones@ufc.com"}
   user.SetAge()
